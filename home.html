@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select API</title>
+    <style>/* Add your styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        h1 {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: #fff;
+            margin: 0;
+        }
+        
+        #api-buttons {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            margin: 0.5rem;
+        }
+        </style>
+</head>
+<body>
+    <h1>Select an API</h1>
+    <div id="api-buttons">
+        <button data-api="newsapi">NewsAPI</button>
+        <button data-api="bingnewsapi">Bing News API</button>
+    </div>
+    
+    <script>
+        const apiButtons = document.querySelectorAll('#api-buttons button');
+
+        apiButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const selectedAPI = button.getAttribute('data-api');
+                window.location.href = `${selectedAPI}.html`;
+            });
+        });
+    </script>
+</body>
+</html>
